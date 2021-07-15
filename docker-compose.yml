@@ -1,0 +1,15 @@
+version: '3'
+services:
+    web:
+        build:
+            context: .
+        image: itri-go/scipy-notebook:latest
+        # container_name: flow-control-02
+        #environment:
+        #    - discovery.type=single-node
+        volumes:
+            - ./work:/home/jovyan/work
+        ports:
+            - 8888:8888
+        #restart: always
+        command: tail -f /dev/null
